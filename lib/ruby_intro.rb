@@ -61,7 +61,22 @@ def hello(name)
 end
 
 def starts_with_consonant? s
-  # YOUR CODE HERE
+  if s.length == 0 
+    false # empty strings cannot start with anything
+  elsif
+    first_char = s[0]
+    vowels = ["A", "E", "I", "O", "U"]
+    first_char_is_vowel = false
+
+    # iterate through list of vowels checking for match
+    for vowel in vowels
+      if vowel.casecmp?(first_char) # case insenstitive comparison
+        first_char_is_vowel = true
+      end
+    end
+
+    return !first_char_is_vowel
+  end
 end
 
 def binary_multiple_of_4? s
