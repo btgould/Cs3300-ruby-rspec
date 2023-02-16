@@ -61,22 +61,12 @@ def hello(name)
 end
 
 def starts_with_consonant? s
-  if s.length == 0 
-    false # empty strings cannot start with anything
-  elsif
-    first_char = s[0]
-    vowels = ["A", "E", "I", "O", "U"]
-    first_char_is_vowel = false
+  # define regex pattern for both lower and upper case consonants
+  lower_consonants = /[bcdfghjklmnpqrstvwxyz]/
+  upper_consonants = /[BCDFGHJKLMNPQRSTVWXYZ]/
 
-    # iterate through list of vowels checking for match
-    for vowel in vowels
-      if vowel.casecmp?(first_char) # case insenstitive comparison
-        first_char_is_vowel = true
-      end
-    end
-
-    return !first_char_is_vowel
-  end
+  # match consonants regex against start of string
+  s.start_with?(lower_consonants) || s.start_with?(upper_consonants)
 end
 
 def binary_multiple_of_4? s
