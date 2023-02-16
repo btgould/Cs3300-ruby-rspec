@@ -88,6 +88,14 @@ class BookInStock
       raise ArgumentError
     end
 
+    # validate values of arguments
+    if isbn == ''
+      raise ArgumentError
+    end 
+    if price < 0
+      raise ArgumentError
+    end
+
     # Assign arguments to instance vars
     @isbn = isbn
     @price = price
