@@ -35,7 +35,23 @@ def max_2_sum arr
 end
 
 def sum_to_n? arr, n
-  # YOUR CODE HERE
+  # idea: change to one variable problem
+  # At each element x in the list, does the list contain n-x?
+  # If so, those two elements sum to n and we return true
+
+  seen = {}
+  # iterate through list
+  for index in 0..arr.length-1
+    # check if we have seen complement of current list
+    if seen.has_key?(n-arr[index])
+      return true
+    end
+
+    seen[arr[index]] = true # add current element to seen list
+  end
+
+  # if we haven't found a pair by now, there isn't one
+  false
 end
 
 # Part 2
