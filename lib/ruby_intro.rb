@@ -7,20 +7,31 @@ def sum arr
 end
 
 def max_2_sum arr
-  max = 0 # largest num in list
-  maxx = 0 # second largest num in list
-
-  # iterate through list to find top two largest elements
-  for index in 0..arr.length-1
-    if arr[index] > max # new largest, largest -> second largest
-      maxx = max
-      max = arr[index]
-    elsif arr[index] > maxx # new second largest
-      maxx = arr[index]
+  if arr.length == 0
+    0
+  elsif arr.length == 1
+    arr[0]
+  else
+    max = arr[0] # largest num in list
+    maxx = arr[1] # second largest num in list
+    if maxx > max # swap if needed
+      tmp = max
+      max = maxx
+      maxx = tmp
     end
+
+    # iterate through rest of list to find top two largest elements
+    for index in 2..arr.length-1
+      if arr[index] > max # new largest, largest -> second largest
+        maxx = max
+        max = arr[index]
+      elsif arr[index] > maxx # new second largest
+        maxx = arr[index]
+      end
+    end
+
+    max + maxx # return sum of top two largest
   end
-  
-  max + maxx # return sum of top two largest
 end
 
 def sum_to_n? arr, n
