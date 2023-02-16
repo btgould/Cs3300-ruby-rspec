@@ -3,7 +3,7 @@
 # Part 1
 
 def sum arr
-  # YOUR CODE HERE
+  arr.sum # use ruby's built in tools to sum arrays
 end
 
 def max_2_sum arr
