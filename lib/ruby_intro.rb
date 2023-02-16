@@ -76,5 +76,20 @@ end
 # Part 3
 
 class BookInStock
-# YOUR CODE HERE
+  attr_accessor :isbn  
+  attr_accessor :price
+
+  def initialize(isbn, price)
+    # validate types of arguments 
+    if isbn.class != String
+      raise ArgumentError 
+    end
+    if price.class != Float
+      raise ArgumentError
+    end
+
+    # Assign arguments to instance vars
+    @isbn = isbn
+    @price = price
+  end
 end
