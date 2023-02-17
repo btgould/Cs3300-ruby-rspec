@@ -92,7 +92,7 @@ class BookInStock
     if isbn == ''
       raise ArgumentError
     end 
-    if price < 0
+    if price <= 0
       raise ArgumentError
     end
 
