@@ -70,7 +70,19 @@ def starts_with_consonant? s
 end
 
 def binary_multiple_of_4? s
-  # YOUR CODE HERE
+  # Check if string is valid binary
+  if s.match?(/^[01 ]+$/)
+    if s == "0"
+      return true # 0 is a multiple of 4
+    elsif s.length < 2
+      return false # no non-zero binary number with less than 2 digits is a multiple of 4
+    elsif s[-1] == '0' && s[-2] == '0'
+      return true # both least significant digits are 0 -> multiple of 4
+    end
+  end 
+
+  # If we get here, string was not valid binary
+  false
 end
 
 # Part 3
