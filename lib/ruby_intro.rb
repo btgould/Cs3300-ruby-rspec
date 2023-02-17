@@ -84,7 +84,7 @@ class BookInStock
     if isbn.class != String
       raise ArgumentError 
     end
-    if price.class != Float
+    if !(price.class == Float || price.class == Integer)
       raise ArgumentError
     end
 
@@ -99,5 +99,10 @@ class BookInStock
     # Assign arguments to instance vars
     @isbn = isbn
     @price = price
+  end
+
+  def price_as_string
+    # Format price as float with two decimals, concat with "$"
+    "$" + "%.2f" % @price
   end
 end
