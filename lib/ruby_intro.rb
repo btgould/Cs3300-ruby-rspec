@@ -88,9 +88,11 @@ end
 # Part 3
 
 class BookInStock
+  # Instance vars
   attr_accessor :isbn  
   attr_accessor :price
 
+  # Constructor
   def initialize(isbn, price)
     # validate types of arguments 
     if isbn.class != String

@@ -3,16 +3,16 @@
 require_relative '../lib/ruby_intro'
 
 describe 'Ruby intro part 1' do
-  describe '#sum' do
+  describe '#sum' do # unit tests for the sum function 
 
-    it 'returns correct sum [1 point]', points: 1 do
+    it 'returns correct sum [1 point]', points: 1 do # Tests (worth 1 point) checking ability to compute sum correctly
       expect(sum([1, 2, 3, 4, 5])).to be_a_kind_of Integer
       expect(sum([1, 2, 3, 4, 5])).to eq(15)
       expect(sum([1, 2, 3, 4, -5])).to eq(5)
       expect(sum([1, 2, 3, 4, -5, 5, -100])).to eq(-90)
     end
 
-    it 'works on the empty array [2 points]', points: 2 do
+    it 'works on the empty array [2 points]', points: 2 do # Tests (worth 2 points) checking functionality for empty array
       expect { sum([]) }.not_to raise_error
       expect(sum([])).to be_zero
     end
